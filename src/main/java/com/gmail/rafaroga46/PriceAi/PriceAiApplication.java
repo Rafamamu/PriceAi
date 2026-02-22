@@ -8,6 +8,8 @@ public class PriceAiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PriceAiApplication.class, args);
+
+		System.out.println("Pronto para rodar!!!");
 	}
 
 }

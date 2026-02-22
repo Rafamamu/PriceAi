@@ -1,6 +1,7 @@
 package com.gmail.rafaroga46.PriceAi.model;
 
 import jakarta.persistence.*;
+import org.hibernate.Length;
 
 import java.math.BigDecimal;
 
@@ -12,11 +13,13 @@ public class ProductAlert {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     private String product;
     private BigDecimal minPrice;
     private BigDecimal maxPrice;
-    private String prompt;
 
+    @Column(length = 2000)
+    private String aiResponse;
     private String email;
 
     public ProductAlert() {
@@ -26,13 +29,12 @@ public class ProductAlert {
     public ProductAlert(String product,
                         BigDecimal minPrice,
                         BigDecimal maxPrice,
-                        String prompt,
+                        String aiResponse,
                         String email) {
 
         this.product = product;
         this.minPrice = minPrice;
         this.maxPrice = maxPrice;
-        this.prompt = prompt;
         this.email = email;
 
     }
@@ -69,13 +71,11 @@ public class ProductAlert {
         this.maxPrice = maxPrice;
 
     }
-
-    public String getPrompt() {
-        return prompt;
+    public String getAiResponse() {
+        return aiResponse;
     }
-
-    public void setPrompt(String prompt) {
-        this.prompt = prompt;
+    public void setAiResponse(String aiResponse) {
+        this.aiResponse = aiResponse;
     }
 
     public String getEmail() {
