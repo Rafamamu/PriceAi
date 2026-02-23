@@ -3,9 +3,9 @@ spring:
     name: PriceAi
 
   datasource:
-    url: jdbc:postgresql://db:5432/priceai
-    username: rafael
-    password: mamute
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASWWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -21,4 +21,4 @@ server:
   port: 8080
 
 gemini:
-  url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent"
+  url: ${GEMINI_URL}

@@ -11,8 +11,8 @@ services:
   db:
     image: postgres:15
     environment:
-      POSTGRES_USER: rafael
-      POSTGRES_PASSWORD: mamute
+      POSTGRES_USER: ${SPRING_DATASOURCE_USERNAME}
+      POSTGRES_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
       POSTGRES_DB: priceai
     ports:
       - "5432:5432"
