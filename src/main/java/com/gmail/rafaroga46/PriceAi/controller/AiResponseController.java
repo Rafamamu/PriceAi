@@ -15,8 +15,10 @@ public class AiResponseController {
         this.openAiService = openAiService;
     }
 
-    @GetMapping
+    @GetMapping("/generate")
     public Mono<ResponseEntity<String>> generateResponseAi() {
-        return  openAiService.generateResponseAi();
+        return  openAiService.generateResponseAi()
+                .map(product-> ResponseEntity.ok(product))
+                .defaultIfEmpty(ResponseEntity.noContent().build());
     }
 }
