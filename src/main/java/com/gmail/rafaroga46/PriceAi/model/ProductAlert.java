@@ -35,6 +35,7 @@ public class ProductAlert {
         this.product = product;
         this.minPrice = minPrice;
         this.maxPrice = maxPrice;
+        this.aiResponse = aiResponse;
         this.email = email;
 
     }
